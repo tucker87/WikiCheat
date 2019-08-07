@@ -1,6 +1,12 @@
 const { getLinksOnPage, getBackLinksOnPage } = require("./wikiApi.js");
 
-let pageToLookup = 'baseball'
+if(process.argv.length <= 2)
+{
+    console.error("Need a title to search for!")
+    return;
+}
+
+let pageToLookup = process.argv[2]
 
 getLinksOnPage(pageToLookup).then(async links => {
     let results = []
