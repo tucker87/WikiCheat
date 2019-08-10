@@ -41,15 +41,24 @@ switch (command) {
         break;
     case "links":
         validateInput(pageToLookup)
-        getLinksOnPage(pageToLookup).then(links => console.log(links.length))
+        getLinksOnPage(pageToLookup).then(links => {
+            console.table(links)
+            console.log(links.length)
+        })
         break;
     case "backLinks":
         validateInput(pageToLookup)
-        getBackLinksOnPage(pageToLookup).then(bl => console.log(bl.length))
+        getBackLinksOnPage(pageToLookup).then(bl => {
+            console.table(bl)
+            console.log(bl.length)
+        })
         break;
     case "linksHere":
         validateInput(pageToLookup)
-        getLinksHereOnPage(pageToLookup).then(lh => console.log(lh.count))
+        getLinksHereOnPage(pageToLookup).then(lh => {
+            console.table(lh)
+            console.log(lh.length)
+        })
         break;
     case "rand":
         getRandomPages().then(async links => {
