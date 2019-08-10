@@ -1,5 +1,5 @@
 const validateInput = input => {
-    if(input != true)
+    if(input == undefined)
         throw "Invalid input for command."
 }
 
